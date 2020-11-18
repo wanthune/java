@@ -1,4 +1,4 @@
-spring-boot/images/springboot初始化步骤.PNG
+https://github.com/wanthune/java/blob/main/spring-boot/images/springboot%E5%88%9D%E5%A7%8B%E5%8C%96%E6%AD%A5%E9%AA%A4.PNG
 ### 一. spring initializer 加载顺序
 ```$xslt
 thirdInitializer
