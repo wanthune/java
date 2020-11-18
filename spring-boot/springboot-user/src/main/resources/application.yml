@@ -1,0 +1,33 @@
+server:
+    port: 8080
+
+spring:
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/user?allowMultiQueries=true&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
+        username: dev_admin
+        password: sidNkyy6h0wkNinH
+        hikari:
+            connection-test-query: SELECT 1 FROM DUAL
+            minimum-idle: 3
+            maximum-pool-size: 24
+            pool-name: ${spring.application.name}-CP
+            idle-timeout: 10000
+            cachePrepStmts: true
+            prepStmtCacheSize: 250
+            prepStmtCacheSqlLimit: 2048
+            leakDetectionThreshold: 20000
+mybatis:
+    configuration:
+        map-underscore-to-camel-case: true
+        default-fetch-size: 100
+        default-statement-timeout: 30
+    mapperLocations: classpath*:mapper/*.xml
+
+logging:
+    level:
+        ROOT : INFO
+context:
+    initializer:
+        classes: com.demo.springboot.user.initializer.ThirdInitializer
